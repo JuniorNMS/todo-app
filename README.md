@@ -1,70 +1,115 @@
-# Getting Started with Create React App
+# Todo List Application
+[![React](https://img.shields.io/badge/React-18.2.0-blue)](https://reactjs.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**Developer:** Emmanuel
+**Live Demo:** [https://juniornms.github.io/todo-app/](https://juniornms.github.io/todo-app/)
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 📋 Project Overview
+A full-stack todo list application with CRUD functionality, built with React and Redux. Features include task management, status filtering, and a contact form.
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 🎯 User Stories
+1. **Task Management**: As a user, I want to add/remove tasks to organize my workflow
+2. **Progress Tracking**: As a user, I want to mark tasks as complete to track progress
+3. **Filtering**: As a user, I want to filter tasks by status to focus on priorities
+4. **Support**: As a user, I want to submit inquiries via a contact form
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## 🎨 Wireframes
+### Todos View
+[Logo] Todos | Contact
+[Input Field] [Add Button]
+[All][Completed][Incomplete] Filters
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+☐ Task 1 [Delete]
 
-### `npm run build`
+✓̶ Completed Task [Delete]
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Contact View
+[Logo] Todos | Contact
+First Name: []
+Last Name: []
+Email: []
+Comments: []
+[Submit Button]
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## 🌳 State Tree
+```javascript
+{
+  todos: [
+    { 
+      id: 1, 
+      text: 'Learn Redux', 
+      completed: true 
+    },
+    { 
+      id: 2, 
+      text: 'Deploy App', 
+      completed: false 
+    }
+  ],
+  visibilityFilter: 'SHOW_ALL',
+  contactForm: {
+    firstName: '',
+    lastName: '',
+    email: '',
+    comments: ''
+  }
+}🧩 Component Structure
+Component	Type	Responsibility
+App	Container	Root router configuration
+TodoListContainer	Container	Connects Redux to todo list
+TodoList	Presentational	Displays filtered todos
+TodoItem	Presentational	Renders individual todo tasks
+ContactForm	Presentational	Handles form input/validation
+NavBar	Presentational	Navigation between views
+FilterButtons	Presentational	Manages todo filtering
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+🛠️ Technologies Used
+Frontend: React 18, Redux Toolkit, React Router 7
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Styling: CSS (10+ custom rules)
 
-## Learn More
+Build Tools: Create React App, GitHub Pages
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+🚀 Features
+CRUD Operations: Add/update/delete todos
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Real-time Filtering: All/Completed/Incomplete
 
-### Code Splitting
+Form Validation: Contact form with controlled inputs
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Responsive Design: Mobile-friendly layout
 
-### Analyzing the Bundle Size
+▶️ Usage
+Add Todo: Type task + click "Add"
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Complete Todo: Check checkbox
 
-### Making a Progressive Web App
+Delete Todo: Click trash icon
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Filter: Use buttons above list
 
-### Advanced Configuration
+Contact: Navigate to /contact and submit form
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+🔮 Future Improvements
+Add user authentication
 
-### Deployment
+Implement due dates/reminders
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Add database persistence
 
-### `npm run build` fails to minify
+Dark mode toggle
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Task categories/tags
+
